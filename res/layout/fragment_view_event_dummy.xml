@@ -8,59 +8,56 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ViewEvent$DummySectionFragment" >
 
-    <Button
-        android:id="@+id/deleteEvent"
+
+   	<TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title" />
+   	<TextView
+        android:id="@+id/tvGetTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/editEvent"
-        android:text="@string/delete_event" />
-
-    <Button
-        android:id="@+id/editEvent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="30dp"
-        android:text="@string/edit_event" />
-
-    <EditText
-        android:id="@+id/note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:lines="7" />
-
+        android:layout_below="@+id/tvTitle"
+        android:text="@string/title" />
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_alignRight="@+id/deleteEvent"
+        android:layout_below="@+id/tvGetTitle"
+        android:text="@string/new_event" />
+    <TextView
+        android:id="@+id/tvGetNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNote"
+        android:text="@string/new_event" />
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvGetNote"
+        android:text="@string/date" />
+    
+    <TextView
+        android:id="@+id/tvGetDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDate"
         android:text="@string/date" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editEvent"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="23dp"
+        android:layout_below="@+id/tvGetDate"
         android:text="@string/time" />
 
-    <ImageView
-        android:id="@+id/ivNote"
+    <TextView
+        android:id="@+id/tvGetTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/note"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ic_launcher" />
+        android:layout_below="@+id/tvTime"
+        android:text="@string/time" />
 
 </RelativeLayout>

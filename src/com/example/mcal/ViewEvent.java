@@ -37,6 +37,7 @@ public class ViewEvent extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_view_event);
 
 		// Create the adapter that will return a fragment for each of the three
@@ -120,7 +121,7 @@ public class ViewEvent extends FragmentActivity {
 			View rootView = inflater.inflate(
 					R.layout.fragment_view_event_dummy, container, false);
 			TextView dummyTextView = (TextView) rootView
-					.findViewById(R.id.editEvent);
+					.findViewById(R.id.tvDate);
 			dummyTextView.setText(Integer.toString(getArguments().getInt(
 					ARG_SECTION_NUMBER)));
 			return rootView;
