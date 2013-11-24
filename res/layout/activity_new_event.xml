@@ -8,63 +8,77 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".NewEvent" >
 
-    <MultiAutoCompleteTextView
-        android:id="@+id/tvNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tvTitle"
-        android:layout_marginTop="19dp"
-        android:ems="10"
-        android:lines="7"
-        android:text="@string/new_event" >
-
-        <requestFocus />
-    </MultiAutoCompleteTextView>
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvNote"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="79dp"
-        android:text="@string/new_event" />
-
     <TextView
         android:id="@+id/tvtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvTitle"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="29dp"
-        android:text="@string/title" />
+        android:layout_marginTop="5dp"
+        android:text="@string/title" /> 
+    <EditText
+        android:id="@+id/etGetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvtitle"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="@string/title" />
+    
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etGetTitle"
+        android:layout_marginTop="5dp"
+        android:text="@string/note" />
+    <EditText
+        android:id="@+id/etGetNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNote"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etGetNote"
+        android:layout_marginTop="5dp"
+        android:text="@string/date" />
+    <EditText
+        android:id="@+id/etGetDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDate"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etGetDate"
+        android:layout_marginTop="5dp"
+        android:text="@string/time" />
+    <EditText
+        android:id="@+id/etGetTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTime"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="time" />
 
     <Button
         android:id="@+id/bSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="22dp"
-        android:layout_toRightOf="@+id/tvNote"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="44dp"
+        android:layout_marginLeft="138dp"
         android:text="@string/save" />
-
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvNote"
-        android:layout_below="@+id/tvNote"
-        android:layout_marginTop="20dp"
-        android:text="@string/date" />
-
-    <TextView
-        android:id="@+id/tvTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvDate"
-        android:layout_below="@+id/tvDate"
-        android:layout_marginTop="24dp"
-        android:text="@string/time" />
 
 </RelativeLayout>

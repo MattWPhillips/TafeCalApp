@@ -7,8 +7,9 @@
     <string name="edit_event">Edit Event</string>
     <string name="delete_event">Delete Event</string>
     <string name="date">Date</string>
+    <string name="note">Note</string>
     <string name="time">Time</string>
-    <string name="title">Titile</string>
+    <string name="title">Title</string>
     <string name="save">Save</string>
     <string name="title_activity_new_event">NewEvent</string>
     <string name="title_activity_view_event">ViewEvent</string>
@@ -16,5 +17,7 @@
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
     <string name="title_activity_edit_event">EditEvent</string>
+    <string name="title_activity_see_events">SeeEvents</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

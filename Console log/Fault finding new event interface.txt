@@ -1,0 +1,1 @@
+11-23 06:43:11.079: E/AndroidRuntime(1374): 	at com.example.mcal.NewEvent.onCreate(NewEvent.java:23)

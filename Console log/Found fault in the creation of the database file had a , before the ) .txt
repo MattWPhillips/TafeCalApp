@@ -1,0 +1,1 @@
+11-23 07:44:51.616: D/dalvikvm(1243): GC_FOR_ALLOC freed 113K, 4% free 4630K/4808K, paused 27ms, total 44ms

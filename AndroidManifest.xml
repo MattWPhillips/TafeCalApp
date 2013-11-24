@@ -27,12 +27,12 @@
             android:label="@string/title_activity_new_event" >
         </activity>
         <activity
-            android:name="com.example.mcal.ViewEvent"
-            android:label="@string/title_activity_view_event" >
-        </activity>
-        <activity
             android:name="com.example.mcal.EditEvent"
             android:label="@string/title_activity_edit_event" >
+        </activity>
+        <activity
+            android:name="com.example.mcal.SeeEvents"
+            android:label="@string/title_activity_see_events" >
         </activity>
     </application>
 

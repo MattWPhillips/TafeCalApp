@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 public class MainActivity extends ListActivity {
 
-	String userOptions[] = {"NewEvent","ViewEvent","EditEvent"};
+	String userOptions[] = {"NewEvent","SeeEvents","EditEvent"};
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
