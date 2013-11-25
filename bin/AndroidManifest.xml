@@ -34,6 +34,10 @@
             android:name="com.example.mcal.SeeEvents"
             android:label="@string/title_activity_see_events" >
         </activity>
+        <activity
+            android:name="com.example.mcal.ListEvents"
+            android:label="@string/title_activity_list_events" >
+        </activity>
     </application>
 
 </manifest>

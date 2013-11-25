@@ -1,8 +1,7 @@
 package com.example.mcal;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.HashMap;
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -81,24 +80,61 @@ public final class StoreEvents {
 		return sqliteDatabase.insert(SqlTableStructure.TABLE_NAME, null, cv);		
 	}
 
-	public List<String> getEvent() {
-		List<String> events = new ArrayList<String>();
+	@SuppressLint("UseSparseArrays")
+	public HashMap<Integer, Event> getEvent() {
+		HashMap<Integer, Event> events = new HashMap<Integer, Event>();
 		String[] columns = new String[]{SqlTableStructure.ROW_ID, SqlTableStructure.COLUMN_NAME_TITLE,
 				SqlTableStructure.COLUMN_NAME_NOTES,SqlTableStructure.COLUMN_NAME_DATE,
 				SqlTableStructure.COLUMN_NAME_TIME};
 		
 		Cursor cursor = sqliteDatabase.query(SqlTableStructure.TABLE_NAME, columns, null, null, null, null, null);
-		
+		Event event = new Event();
+		Integer id= 0;
+		int indxId = cursor.getColumnIndex(SqlTableStructure.ROW_ID);
 		int indxTitle = cursor.getColumnIndex(SqlTableStructure.COLUMN_NAME_TITLE);
 		int indxNotes = cursor.getColumnIndex(SqlTableStructure.COLUMN_NAME_NOTES);
 		int indxDate = cursor.getColumnIndex(SqlTableStructure.COLUMN_NAME_DATE);
 		int indxTime = cursor.getColumnIndex(SqlTableStructure.COLUMN_NAME_TIME);
 		
 		for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
-			events.add(cursor.getString(indxTitle));
-			events.add(cursor.getString(indxNotes));
-			events.add(cursor.getString(indxDate));
-			events.add(cursor.getString(indxTime));
+			
+			event.setTitle(cursor.getString(indxTitle));
+			event.setNote(cursor.getString(indxNotes));
+			event.setDate(cursor.getString(indxDate));
+			event.setTime(cursor.getString(indxTime));
+			id = cursor.getInt(indxId);
+			events.put(id,event);
+		}
+		return events;
+	}
+	
+	public void editEntry(long rowID, String title, String notes, String date, String time)	{
+		ContentValues cvUpdate = new ContentValues();
+		cvUpdate.put(SqlTableStructure.COLUMN_NAME_TITLE, title);
+		cvUpdate.put(SqlTableStructure.COLUMN_NAME_NOTES, notes);
+		cvUpdate.put(SqlTableStructure.COLUMN_NAME_DATE, date);
+		cvUpdate.put(SqlTableStructure.COLUMN_NAME_TIME, time);
+		
+		sqliteDatabase.update(SqlTableStructure.TABLE_NAME, cvUpdate, SqlTableStructure.ROW_ID + "=" + rowID, null);
+	}
+	@SuppressLint("UseSparseArrays")
+	public HashMap<Integer, String> getEventsList() {
+		HashMap<Integer, String> events = new HashMap<Integer,String>();
+		String[] columns = new String[]{SqlTableStructure.ROW_ID, SqlTableStructure.COLUMN_NAME_TITLE,
+				SqlTableStructure.COLUMN_NAME_NOTES,SqlTableStructure.COLUMN_NAME_DATE,
+				SqlTableStructure.COLUMN_NAME_TIME};
+		
+		Cursor cursor = sqliteDatabase.query(SqlTableStructure.TABLE_NAME, columns, null, null, null, null, null);
+		String title ="";
+		Integer id= 0;
+		int indxId = cursor.getColumnIndex(SqlTableStructure.ROW_ID);
+		int indxTitle = cursor.getColumnIndex(SqlTableStructure.COLUMN_NAME_TITLE);
+		
+		for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
+			
+			title = cursor.getString(indxTitle);
+			id = cursor.getInt(indxId);
+			events.put(id,title);
 		}
 		return events;
 	}

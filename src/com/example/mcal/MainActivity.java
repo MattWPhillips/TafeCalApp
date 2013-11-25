@@ -23,6 +23,7 @@ public class MainActivity extends ListActivity {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
 		try {
+			@SuppressWarnings("rawtypes")
 			Class createClass = Class.forName("com.example.mcal." + userOptions[position]);
 			Intent intent = new Intent(MainActivity.this, createClass);
 			startActivity(intent);

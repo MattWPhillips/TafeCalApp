@@ -9,45 +9,90 @@
     tools:context=".EditEvent" >
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvEditTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/edit_event" />
-    
-        <ImageButton
-        android:id="@+id/imgbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvNote"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:src="@drawable/ic_launcher" />
+        android:layout_marginTop="5dp"
+        android:text="@string/title" />
 
-    <TimePicker
-        android:id="@+id/timePick"
+    <EditText
+        android:id="@+id/etEditGetTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvTitle"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="14dp" />
-
-    <DatePicker
-        android:id="@+id/datePick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/timePick"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="19dp" />
-
-    <MultiAutoCompleteTextView
-        android:id="@+id/tvNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/tvTitle"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tvEditTitle"
+        android:layout_marginTop="5dp"
         android:ems="10"
-        android:lines="7"
-        android:text="@string/edit_event" />
+        android:hint="@string/title" />
+
+    <TextView
+        android:id="@+id/tvEditNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEditGetTitle"
+        android:layout_marginTop="5dp"
+        android:text="@string/note" />
+
+    <EditText
+        android:id="@+id/etEditGetNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEditNote"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/tvEditDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEditGetNote"
+        android:layout_marginTop="5dp"
+        android:text="@string/date" />
+
+    <EditText
+        android:id="@+id/etEditGetDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEditDate"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/tvEditTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEditGetDate"
+        android:layout_marginTop="5dp"
+        android:text="@string/time" />
+
+    <EditText
+        android:id="@+id/etEditGetTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEditTime"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="time" />
+
+    <Button
+        android:id="@+id/bEditDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="43dp"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@+id/bEditSave"
+        android:text="@string/delete" />
+
+    <Button
+        android:id="@+id/bEditSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bEditDelete"
+        android:layout_alignBottom="@+id/bEditDelete"
+        android:layout_marginLeft="22dp"
+        android:layout_toRightOf="@+id/tvEditTime"
+        android:text="@string/save" />
 
 </RelativeLayout>
